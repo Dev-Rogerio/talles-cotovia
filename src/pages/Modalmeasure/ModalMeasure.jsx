@@ -51,36 +51,40 @@ const ModalMeasure = ({
   // Função para enviar o e-mail com os dados do pedido
   const handleSendEmail = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/send-pedido", {
-        cpf,
-        client,
-        colar,
-        pala,
-        manga,
-        cintura,
-        quadril,
-        cumprimento,
-        biceps,
-        antebraco,
-        punhoEsquerdo,
-        punhoDireito,
-        torax,
-        extraRigido,
-        barbatana,
-        modelColar,
-        vendedor,
-        id,
-        inputDate,
-        deliveryDate,
-        metersTissue,
-        monograma,
-        modelFish,
-        typeFront,
-        typeModel,
-        typePense,
-        description: localDescription,
-        rows,
-      });
+      // const response = await axios.post("http://localhost:5000/send-pedido", {
+      const response = await axios.post(
+        "https://talles-cotovia.onrender.com/send-pedido",
+        {
+          cpf,
+          client,
+          colar,
+          pala,
+          manga,
+          cintura,
+          quadril,
+          cumprimento,
+          biceps,
+          antebraco,
+          punhoEsquerdo,
+          punhoDireito,
+          torax,
+          extraRigido,
+          barbatana,
+          modelColar,
+          vendedor,
+          id,
+          inputDate,
+          deliveryDate,
+          metersTissue,
+          monograma,
+          modelFish,
+          typeFront,
+          typeModel,
+          typePense,
+          description: localDescription,
+          rows,
+        }
+      );
       alert(response.data.message); // Exibir a mensagem de sucesso
     } catch (error) {
       console.error("Erro ao enviar o e-mail:", error);
